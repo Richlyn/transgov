@@ -1,0 +1,26 @@
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.3fr 1.8fr 2.1fr 0.3fr;
+  grid-template-areas: "\.header \.header \.header \.header""\.nav \.nav \.nav \.nav""\.content \.content \.content \.content""\#tableDisplay \#tableDisplay \#tableDisplay \#tableDisplay"". \.footer \.footer .";
+}
+
+.\.header {
+  grid-area: \.header;
+}
+
+.\.nav {
+  grid-area: \.nav;
+}
+
+.\.footer {
+  grid-area: \.footer;
+}
+
+.\#tableDisplay {
+  grid-area: \#tableDisplay;
+}
+
+.\.content {
+  grid-area: \.content;
+}

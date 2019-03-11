@@ -1,21 +1,22 @@
 var allMembers = data.results[0].members; //allows us to access just the members of the representative API
 
 function memberTable(allMembers) {
-  var tRow = document.getElementById("tBody");
+  var tBody = document.getElementById("tBody");
   for (var i = 0; i < allMembers.length; i++) {
     var tRow = tBody.insertRow("tRow");
     tRow.insertCell().innerHTML = i + 1 + ".";
 
     if (allMembers[i].middle_name == null) {
-      tRow.insertCell().innerHTML =
-        allMembers[i].last_name + ", " + allMembers[i].first_name;
+      var repName = allMembers[i].last_name + ", " + allMembers[i].first_name;
+      tRow.insertCell().innerHTML = repName.link(allMembers[i].url);
     } else {
-      tRow.insertCell().innerHTML =
+      var repName =
         allMembers[i].last_name +
         ", " +
         allMembers[i].first_name +
         " " +
         allMembers[i].middle_name;
+      tRow.insertCell().innerHTML = repName.link(allMembers[i].url);
     }
     tRow.insertCell().innerHTML = allMembers[i].party;
     tRow.insertCell().innerHTML = allMembers[i].state;
@@ -31,4 +32,4 @@ function memberTable(allMembers) {
   }
 }
 
-console.log(memberTable(allMembers));
+memberTable(allMembers);
