@@ -33,3 +33,8 @@ function memberTable(allMembers) {
 }
 
 memberTable(allMembers);
+
+//for checked boxes
+var checkedBoxes = document.querySelectorAll(
+  "input[name=mycheckboxes]:checked"
+);

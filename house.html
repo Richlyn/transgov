@@ -1,44 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="/styles/main.css" />
+    <!-- latest compiled and minified css -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-  </head>
+    <!--This is my CSS File-->
+    <link rel="stylesheet" href="styles/manin.css"> 
+   </head>
   <body>
-      <nav>
-          <div>
-            <div>
-              <a href="#">TGIF</a>
-            </div>
-                <ul class="nav nav-pills">
-                  <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      data-toggle="dropdown"
-                      href="#"
-                      role="button"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                      >Congress 113</a
-                    >
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="senate.html">Senate</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="house.html">House</a>
-                    </div>
-                  </li>
-                </ul>
-        </nav>
-    <!--Table container-->
-    <div class="content">
+    <div class="mx-auto" style= "width:1000px;"> 
+      <header>  
+        <div>
+            <!-- Logo-->
+            <img class="img-fluid" src="../imgs/logo.png" alt="logo" class="img-thumbnail" style= "width:600px;">
+                  <!-- Email -->
+                  <a href="mailto:info@tgif.net" class="d-flex justify-content-end align-items-end">&#9993;info@tgif.net</a>
+          </div>
+           <!--Navbar-->
+          <nav>
+              <div class="py-sm-5">
+                    <ul class="nav navbar-light" style="background-color: #e3f2fd;">
+                      <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                      </li>
+                      <li class="bd-highlight" class="nav-item dropdown">
+                        <a
+                          class="nav-link active dropdown-toggle"
+                          data-toggle="dropdown"
+                          href="#"
+                          role="button"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                          >Congress 113</a
+                        >
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="senate.html">Senate</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="house.html">House</a>
+                        </div>
+                      </li>
+                    </ul>
+            </nav>
+          </header>
+    <!--Content-->
+    <div class="row">
+      <section class="col-md-12"> 
       <h2>Congressmen</h2>
       <p>
         The major power of the House is to pass federal legislation that affects
@@ -55,23 +65,63 @@
         population as measured in the census, but every state is entitled to at
         least one representative.
       </p>
-      <table id="displayTable">
-        <thead>
+    </section>
+  </div>
+ <!--Filter By Party-->
+ <section class="d-flex flex-row justify-content-around" style ="width:50%;" > 
+    <p class="p-2">Filter by Party: </p>
+      <div class="form-check p-2">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">
+            Republican
+          </label>
+        </div>
+        <div class="form-check p-2">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2">
+           Democratic
+          </label>
+        </div>
+        <div class="form-check p-2">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+            <label class="form-check-label" for="defaultCheck2">
+              Independent
+            </label>
+          </div>
+      </section>
+
+          <!--Member Table-->
+      <table class="displayTable table-hover table-striped  table-sm" cellspacing="0" width="100%">
+        <thead class="py-sm-5">
           <tr>
             <th></th>
-            <th>Representative</th>
-            <th>Party Affliation</th>
-            <th>State</th>
-            <th>Years In Office</th>
-            <th>% Votes w/ Party</th>
+            <th class="th-sm">Senator</th>
+            <th class="th-sm">Party Affliation</th>
+            <th class="th-sm">State</th>
+            <th class="th-sm">Years In Office</th>
+            <th class="th-sm">% Votes w/ Party</th>
           </tr>
         </thead>
         <tbody id="tBody"></tbody>
-        <tr id="tRow"></tr>
+        <tr class="page-item" scope="row" id="tRow "></tr>
       </table>
+      </section>
     </div>
+
+
+
+        <!--Footer-->
+    <div class="row"> 
+    <footer class="col-sm-12"> 
+      <p class=" text-center"> &copy; 2016 TGIF | ALL RIGHTS RESERVED </p>
+    </footer>
+    </div>
+  </div>
+   <!-- My JavaScript Files -->
     <script src="/scripts/113house.js"></script>
     <script src="/scripts/main.js"></script>
+
+      <!-- Latest compiled and minified JavaScript  -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -87,5 +137,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+   
   </body>
 </html>
