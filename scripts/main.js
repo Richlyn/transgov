@@ -34,7 +34,12 @@ function memberTable(allMembers) {
 
 memberTable(allMembers);
 
-//for checked boxes
-var checkedBoxes = document.querySelectorAll(
-  "input[name=mycheckboxes]:checked"
-);
+function partySelect() {
+  var party = document.querySelectorAll('input[type="checkbox"]:checked');
+
+  var partyArray = Array.from(party);
+
+  for (var i = 0; i < partyArray.length; i++) {
+    console.log(partyArray[i].value);
+  }
+}
