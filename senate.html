@@ -65,42 +65,36 @@
     </section>
   </div>
   <div class="d-flex flex-rows justify-content-between" style="width:100%" > 
+     <!--Checkbox-->
       <section class="d-flex flex-row justify-content-around" style="width:50%" > 
          <p class="p-2">Filter by Party: </p>
            <div class="form-check p-2">
-               <input class="form-check-input" type="checkbox" value="r" id="republican" name ="party" onchange="partySelect()">
+               <input class="form-check-input" type="checkbox" value="R" id="republican" name ="party" onchange="filterMembers()">
                <label class="form-check-label" for="defaultCheck1">
                  Republican
                </label>
              </div>
              <div class="form-check p-2">
-               <input class="form-check-input" type="checkbox" value="d" id="defaultCheck2" name ="party" onchange="partySelect()">
+               <input class="form-check-input" type="checkbox" value="D" id="defaultCheck2" name ="party" onchange="filterMembers()">
 
                <label class="form-check-label" for="defaultCheck2">
                 Democratic
                </label>
              </div>                                                 
              <div class="form-check p-2">
-                 <input class="form-check-input" type="checkbox" value="i" id="defaultCheck2" name ="party" onchange="partySelect()">
+                 <input class="form-check-input" type="checkbox" value="I" id="defaultCheck2" name ="party" onchange="filterMembers()">
 
                  <label class="form-check-label" for="defaultCheck2">
                    Independent
                  </label>
                </div>
              </section>
-     
+       <!--Dropdown-->
              <section >
                <div style="width:50% float: right">
-                     <label class="p-2">Filter by State:</label>
-                     <select name="Filter_dropdown">
-                       <option value="Katzenmaier">All</option>
-                       <option value="Greenbay">Greenbay</option>
-                       <option value="Yeager">Howard A Yeager</option>
-                       <option value="Hart">Marjorie P Hart</option>
-                       <option value="N.elementary">North Elementary</option>
-                       <option value="S.elementary">South Elementary</option>
-                     </select>
-                   </div>
+                  <label class="p-2">Filter by State:</label>
+                  <select id="state" name="states" onchange="filterMembers()"></select>
+              </div>
            </section>
          </div>
           <!--Member Table-->
@@ -116,7 +110,7 @@
           </tr>
         </thead>
         <tbody id="tBody"></tbody>
-        <tr class="page-item" scope="row" id="tRow"></tr>
+        <!-- <tr class="page-item" scope="row" id="tRow"></tr> -->
       </table>
       </section>
     </div>
